@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,7 +12,9 @@ public class Student {
 
 	
 	@GetMapping("/details")
-	String showDetail() {
+	String showDetail(Model m) {
+		m.addAttribute("message","Hello from Sankalp");
+		
 		return "details";
 	}
 }
